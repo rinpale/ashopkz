@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бесплатная доставка · Ashop.kz</title>
+    <link rel="stylesheet" href="stock.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-background"></div> <!-- Фон логотипа -->
+        <div class="header-container">
+            <a href="../aashop.html">
+                <img src="../logo/Logo 1.svg" alt="Логотип сайта Ashop.kz" class="logo">
+            </a>
+            <div class="header-buttons">
+                <!-- Кнопка для смены темы -->
+                <button class="theme-toggle-btn">
+                    <img src="../logo/white.svg" alt="Светлая тема" id="theme-icon" class="theme-icon">
+                </button>
+                <!-- Кнопка "Вход | Регистрация" -->
+                <a href="autorization/login.html" class="login-btn">
+                    <img src="logo/Untitled.svg" alt="Иконка логина" class="login-icon">
+                    Вход | Регистрация
+                </a>
+                <script>
+                    // Проверка сессии пользователя
+                    fetch('/check-session').then(response => response.json()).then(data => {
+                        if (data.isLoggedIn) {
+                            document.querySelector('.login-btn').outerHTML = `
+                                <a href="profile/profile.html" class="profile-btn">
+                                    <img src="${data.avatar}" alt="Аватар пользователя" class="profile-avatar">
+                                </a>
+                            `;
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </header>
+    <section class="stock-information">
+        <img src="../logo/Money.svg" alt="Money" class="stock-icon">
+        <h1 class="text">Ashop Бонусы</h1>
+        <div class="stock-boxes">
+            <a class="stock-box">
+                <h3 class="stock-title-1"><i class="ri-gift-line"></i></h3>
+                <p class="stock-text-1">Скидка на первый заказ после регистрации</p>
+            </a>
+            <a class="stock-box">
+                <h3 class="stock-title-2"><i class="ri-coins-line"></i></h3>
+                <p class="stock-text-2">Бонусные баллы <br>за покупки</p>
+            </a>
+            <a class="stock-box">
+                <h3 class="stock-title-3"><i class="ri-shopping-bag-4-line"></i></h3>
+                <p class="stock-text-3">Участвуйте в сезонных акциях</p>
+            </a>
+        </div>
+    </section>
+    <section class="delivery-partners">
+        <h1 class="pt-text">Бонусы</h1>
+        <div class="partners-boxes">
+            <div class="top-partners">
+                <a class="partners-box">
+                    <div class="discount">20% Б</div> <!-- Процент бонуса -->
+                    <img src="../logo/medicine.png" alt="Medical" class="partners-title-1">
+                    <p class="partners-text-1">Лекарства</p>
+                </a>
+                <a class="partners-box">
+                    <div class="discount">15% Б</div> <!-- Процент бонуса -->
+                    <img src="../logo/clothes.png" alt="Clothes" class="partners-title-2">
+                    <p class="partners-text-2">Одежда</p>
+                </a>
+                <a class="partners-box">
+                    <div class="discount">15% Б</div> <!-- Процент бонуса -->
+                    <img src="../logo/Electronics.png" alt="Electronics" class="partners-title-3">
+                    <p class="partners-text-3">Электроника</p>
+                </a>
+                <a class="partners-box">
+                    <div class="discount">10% Б</div> <!-- Процент бонуса -->
+                    <img src="../logo/repair.png" alt="repair" class="partners-title-4">
+                    <p class="partners-text-4">Инструменты</p>
+                </a>
+                <a class="partners-box">
+                    <div class="discount">20% Б</div> <!-- Процент бонуса -->
+                    <img src="../logo/Cosmetics.png" alt="Cosmetics" class="partners-title-5">
+                    <p class="partners-text-5">Косметика</p>
+                </a>
+            </div>
+    </section>
+    <section class="questions">
+        <h1 class="question-text">Популярные вопросы</h1>
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Как я могу накопить бонусы в вашем магазине?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>Вы можете накопить бонусы, совершая покупки в нашем магазине. За каждую потраченную сумму вы получаете определенное количество бонусов, которые могут быть использованы для скидок на будущие покупки. Дополнительные бонусы также можно заработать, участвуя в акциях и промо-кампаниях.</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Как я могу использовать свои бонусы?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>Вы можете использовать накопленные бонусы при оформлении заказа как в нашем интернет-магазине, так и в физических точках продаж. При переходе к оплате на сайте вы увидите поле, где можно ввести количество бонусов, которые вы хотите применить. После ввода суммы, соответствующая сумма будет вычтена из общего счета.  Бонусы не могут быть использованы для покупки подарочных карт и в некоторых акциях, так что уточняйте условия перед покупкой.</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Есть ли срок действия у бонусов?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p> У нас нет установленного срока действия для бонусов, поэтому вы можете накапливать их без ограничений. Ваши бонусы останутся активными, пока вы будете участвовать в программе. Однако, если ваш аккаунт останется неактивным (например, не будет совершено покупок) в течение 24 месяцев, бонусы могут быть аннулированы. Рекомендуем периодически проверять баланс бонусов и использовать их, чтобы максимально воспользоваться преимуществами нашей программы!</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Могу ли я передать свои бонусы другому человеку?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>К сожалению, передача бонусов другим пользователям не предусмотрена нашей программой. Бонусы привязаны к вашему аккаунту и могут быть использованы только вами. Это сделано для обеспечения безопасности и защиты ваших накоплений. Если у вас есть накопленные бонусы, мы рекомендуем использовать их для собственных покупок. Однако, вы можете делиться своими рекомендациями о программе с друзьями и знакомыми, чтобы они тоже могли начать накапливать бонусы. Если у вас возникнут дополнительные вопросы или вам нужна помощь, пожалуйста, обратитесь в нашу службу поддержки, и мы с радостью вам поможем!</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Как начисляются Ashop Бонусы?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>За оплату своих покупок у партнеров Ashop.
+                    <br> • в Магазине на Ashop.kz
+                    <br> • в заказе доставки еды в Ashop.kz
+                    <br>За оплату покупок в Магазине на Ashop.kz с Kaspi Gold вы накапливаете 0,45% бонусов.</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="information">
+        <div class="informations">
+            <h2>Контактная информация</h2>
+            <p>Адрес: ул. Каныша Сатпаева, 22, Алматы, Казахстан</p>
+            <p>Телефон: +7 (705) 626-82-65</p>
+            <p>Email: siamoonq@gmail.com</p>
+            <h2>О компании</h2>
+            <p>&copy; 2023-2024, ТОО «Ashop»</p>
+            <p>Ashop.kz — интернет-магазин, предлагающий качественные товары с 2023 года. <br> Наша цель — сделать шопинг удобным и доступным для каждого клиента.</p>
+        </div>
+        <div class="social-links">
+            <h2>Социальные сети</h2>
+            <a class="instc" href="https://www.instagram.com/amytaev/?hl=ru" target="_blank"><i class="ri-instagram-fill"></i></a>
+            <a class="tgc" href="https://t.me/amytaev" target="_blank"><i class="ri-telegram-fill"></i></a>
+            <a class="vkc" href="https://vk.com/amytaev" target="_blank"><i class="ri-vk-fill"></i></a>
+            <a class="ytc" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><i class="ri-youtube-fill"></i></a>
+        </div>
+    </section>
+    <script>
+        // Функция для проверки, полностью ли элемент виден на экране
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Функция для раскрытия/сворачивания ответов
+        function toggleAnswer(element) {
+            const answerContent = element.querySelector('.answer-content');
+            const isActive = element.classList.contains('active');
+
+            if (isActive) {
+                element.classList.remove('active');
+                answerContent.style.maxHeight = answerContent.scrollHeight + "px"; // Устанавливаем текущее значение высоты
+                requestAnimationFrame(() => {
+                    answerContent.style.maxHeight = "0"; // Плавно закрываем
+                    answerContent.style.paddingTop = "0"; // Убираем верхний отступ при закрытии
+                    answerContent.style.paddingBottom = "0"; // Убираем нижний отступ при закрытии
+                });
+            } else {
+                element.classList.add('active');
+                answerContent.style.maxHeight = answerContent.scrollHeight + "px"; // Плавно раскрываем до полной высоты
+                answerContent.style.paddingTop = "15px"; // Восстанавливаем отступы при открытии
+                answerContent.style.paddingBottom = "10px"; // Восстанавливаем отступы при открытии
+
+                // Прокручиваем страницу вниз, только если элемент не виден полностью
+                setTimeout(() => {
+                    if (!isElementInViewport(element)) {
+                        element.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                }, 300); // Таймаут для плавного открытия перед прокруткой
+            }
+        }
+
+                            // Проверка сессии пользователя
+                            fetch('/check-session').then(response => response.json()).then(data => {
+                        if (data.isLoggedIn) {
+                            document.querySelector('.login-btn').outerHTML = `
+                                <a href="profile/profile.html" class="profile-btn">Профиль</a>
+                            `;
+                        }
+                    });
+        </script>
+</body>
+</html>

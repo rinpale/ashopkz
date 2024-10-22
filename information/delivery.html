@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бесплатная доставка · Ashop.kz</title>
+    <link rel="stylesheet" href="delivery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-background"></div> <!-- Фон логотипа -->
+        <div class="header-container">
+            <a href="../aashop.html">
+                <img src="../logo/Logo 1.svg" alt="Логотип сайта Ashop.kz" class="logo">
+            </a>
+            <div class="header-buttons">
+                <!-- Кнопка для смены темы -->
+                <button class="theme-toggle-btn">
+                    <img src="../logo/white.svg" alt="Светлая тема" id="theme-icon" class="theme-icon">
+                </button>
+                <!-- Кнопка "Вход | Регистрация" -->
+                <a href="autorization/login.html" class="login-btn">
+                    <img src="logo/Untitled.svg" alt="Иконка логина" class="login-icon">
+                    Вход | Регистрация
+                </a>
+                <script>
+                    // Проверка сессии пользователя
+                    fetch('/check-session').then(response => response.json()).then(data => {
+                        if (data.isLoggedIn) {
+                            document.querySelector('.login-btn').outerHTML = `
+                                <a href="profile/profile.html" class="profile-btn">
+                                    <img src="${data.avatar}" alt="Аватар пользователя" class="profile-avatar">
+                                </a>
+                            `;
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </header>
+    <section class="delivery-information">
+        <img src="../logo/delivery.svg" alt="delivery" class="delivery-icon">
+        <h1 class="text">Бесплатная доставка</h1>
+        <div class="delivery-boxes">
+            <a class="delivery-box">
+                <h3 class="delivery-title-1"><i class="ri-shopping-basket-2-line"></i></h3>
+                <p class="delivery-text-1">Бесплатная доставка <br>при первом заказе</p>
+            </a>
+            <a class="delivery-box">
+                <h3 class="delivery-title-2"><i class="ri-money-dollar-circle-line"></i></h3>
+                <p class="delivery-text-2">Доставка будет бесплатной при определенной сумме</p>
+            </a>
+            <a class="delivery-box">
+                <h3 class="delivery-title-3"><i class="ri-team-line"></i></h3>
+                <p class="delivery-text-3">Бесплатная доставка постоянным клиентам</p>
+            </a>
+        </div>
+    </section>
+    <section class="delivery-partners">
+        <h1 class="pt-text">Наши партнеры</h1>
+        <div class="partners-boxes">
+            <div class="top-partners">
+                <a class="partners-box">
+                    <img src="../logo/Adidas.svg" alt="Adidas" class="partners-title-1">
+                    <p class="partners-text-1">Adidas</p>
+                </a>
+                <a class="partners-box">
+                    <img src="../logo/ZaraHome.svg" alt="ZaraHome" class="partners-title-2">
+                    <p class="partners-text-2">Zara Home</p>
+                </a>
+                <a class="partners-box">
+                    <img src="../logo/IKea.svg" alt="IKEA" class="partners-title-3">
+                    <p class="partners-text-3">IKEA</p>
+                </a>
+                <a class="partners-box">
+                    <img src="../logo/dfs.svg" alt="dfs" class="partners-title-4">
+                    <p class="partners-text-4">DFS</p>
+                </a>
+                <a class="partners-box">
+                    <img src="../logo/Nike.svg" alt="Nike" class="partners-title-5">
+                    <p class="partners-text-5">Nike</p>
+                </a>
+            </div>
+            <div class="bottom-partners">
+                <a class="partners-box">
+                    <img src="../logo/samsung.svg" alt="Samsung" class="partners-title-6">
+                    <p class="partners-text-6">Samsung</p>
+                </a>
+                <a class="partners-box">
+                    <img src="../logo/Crocs.svg" alt="Crocs" class="partners-title-7">
+                    <p class="partners-text-7">Crocs</p>
+                </a>
+                <a class="partners-box">
+                    <img src="../logo/H&M.svg" alt="H&M" class="partners-title-8">
+                    <p class="partners-text-8">H&M</p>
+                </a>
+                <a class="partners-box">
+                    <img src="../logo/Berhska.svg" alt="Berhska" class="partners-title-9">
+                    <p class="partners-text-9">Berhska</p>
+                </a>
+                <a class="partners-box">
+                    <img src="../logo/apple.svg" alt="Apple" class="partners-title-10">
+                    <p class="partners-text-10">Apple</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="questions">
+        <h1 class="question-text">Популярные вопросы</h1>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Какие условия необходимо выполнить, чтобы получить бесплатную доставку при первом заказе?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>Бесплатная доставка предоставляется для всех новых клиентов при оформлении их первого заказа. Чтобы воспользоваться этим предложением, необходимо зарегистрироваться на сайте, заполнить все необходимые данные для профиля и оформить заказ. После этого, при оформлении покупки, бесплатная доставка будет применена автоматически, если это ваш первый заказ. Это предложение может действовать без минимальной суммы заказа, однако некоторые условия могут различаться в зависимости от региона доставки или текущих акций.</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Какая минимальная сумма заказа требуется для бесплатной доставки?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>Чтобы воспользоваться бесплатной доставкой, покупателю необходимо оформить заказ на сумму, превышающую установленный минимальный порог. Этот порог может варьироваться в зависимости от текущих акций, региона доставки и партнерских условий. Например, в рамках стандартных условий, доставка становится бесплатной при заказе на сумму от 40000 KZT, но в период сезонных распродаж или специальных предложений минимальная сумма может быть снижена. Мы рекомендуем регулярно проверять условия доставки на сайте, так как они могут обновляться и предлагать более выгодные условия для клиентов.</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Существуют ли акции или купоны на бесплатную доставку?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>В рамках специальных акций и предложений могут быть доступны купоны и промокоды на бесплатную доставку. Например, в преддверии Новогодней распродажи мы часто предлагаем нашим клиентам уникальные промокоды, которые позволяют получить бесплатную доставку на заказы независимо от их суммы. Следите за рассылками и обновлениями на сайте, чтобы не пропустить Новогодние акции, где вас ждут не только бесплатная доставка, но и значительные скидки на различные товары. Эти предложения действуют ограниченное время, поэтому рекомендуем заранее планировать покупки в праздничный период.</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Можно ли получить бесплатную доставку при оформлении заказа на несколько товаров?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>Да, бесплатная доставка возможна, если общая сумма вашего заказа превышает установленный минимальный порог, независимо от того, сколько товаров вы добавили в корзину. Минимальный порог для бесплатной доставки устанавливается самим продавцом и может варьироваться в зависимости от условий конкретного магазина или акции. Например, если порог установлен на уровне 5000 KZT, то при покупке нескольких товаров, общая стоимость которых превышает эту сумму, вы получите бесплатную доставку. Важно учитывать, что разные продавцы могут предлагать свои уникальные условия, поэтому рекомендуется ознакомиться с правилами конкретного продавца перед оформлением заказа.</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Доступна ли экспресс-доставка для моих заказов?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>Да, экспресс-доставка доступна для большинства регионов. Она позволяет получить заказ в ускоренные сроки, обычно в течение 1-2 рабочих дней после оформления. Однако условия и стоимость экспресс-доставки могут варьироваться в зависимости от вашего региона и выбранного продавца. В некоторых случаях минимальная сумма заказа для экспресс-доставки может отличаться от условий для стандартной доставки. Обязательно проверьте доступные варианты доставки на этапе оформления заказа, чтобы выбрать наиболее удобный для вас.</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="information">
+        <div class="informations">
+            <h2>Контактная информация</h2>
+            <p>Адрес: ул. Каныша Сатпаева, 22, Алматы, Казахстан</p>
+            <p>Телефон: +7 (705) 626-82-65</p>
+            <p>Email: siamoonq@gmail.com</p>
+            <h2>О компании</h2>
+            <p>&copy; 2023-2024, ТОО «Ashop»</p>
+            <p>Ashop.kz — интернет-магазин, предлагающий качественные товары с 2023 года. <br> Наша цель — сделать шопинг удобным и доступным для каждого клиента.</p>
+        </div>
+        <div class="social-links">
+            <h2>Социальные сети</h2>
+            <a class="instc" href="https://www.instagram.com/amytaev/?hl=ru" target="_blank"><i class="ri-instagram-fill"></i></a>
+            <a class="tgc" href="https://t.me/amytaev" target="_blank"><i class="ri-telegram-fill"></i></a>
+            <a class="vkc" href="https://vk.com/amytaev" target="_blank"><i class="ri-vk-fill"></i></a>
+            <a class="ytc" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><i class="ri-youtube-fill"></i></a>
+        </div>
+    </section>
+    <script>
+        // Функция для проверки, полностью ли элемент виден на экране
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Функция для раскрытия/сворачивания ответов
+        function toggleAnswer(element) {
+            const answerContent = element.querySelector('.answer-content');
+            const isActive = element.classList.contains('active');
+
+            if (isActive) {
+                element.classList.remove('active');
+                answerContent.style.maxHeight = answerContent.scrollHeight + "px"; // Устанавливаем текущее значение высоты
+                requestAnimationFrame(() => {
+                    answerContent.style.maxHeight = "0"; // Плавно закрываем
+                    answerContent.style.paddingTop = "0"; // Убираем верхний отступ при закрытии
+                    answerContent.style.paddingBottom = "0"; // Убираем нижний отступ при закрытии
+                });
+            } else {
+                element.classList.add('active');
+                answerContent.style.maxHeight = answerContent.scrollHeight + "px"; // Плавно раскрываем до полной высоты
+                answerContent.style.paddingTop = "15px"; // Восстанавливаем отступы при открытии
+                answerContent.style.paddingBottom = "10px"; // Восстанавливаем отступы при открытии
+
+                // Прокручиваем страницу вниз, только если элемент не виден полностью
+                setTimeout(() => {
+                    if (!isElementInViewport(element)) {
+                        element.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                }, 300); // Таймаут для плавного открытия перед прокруткой
+            }
+        }
+
+                            // Проверка сессии пользователя
+                            fetch('/check-session').then(response => response.json()).then(data => {
+                        if (data.isLoggedIn) {
+                            document.querySelector('.login-btn').outerHTML = `
+                                <a href="profile/profile.html" class="profile-btn">Профиль</a>
+                            `;
+                        }
+                    });
+        </script>
+</body>
+</html>

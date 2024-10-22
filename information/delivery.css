@@ -1,0 +1,438 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    color: #000;
+    overflow-x: hidden; /* Скрыть горизонтальную прокрутку */
+}
+
+header {
+    background-color: #e4c5ff; /* Цвет фона для заголовка */
+    padding: 15px;
+    position: relative;
+    border-bottom: none;
+    box-shadow: 2px 2px 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-background {
+    background-color: #e4c5ff;
+    position: absolute; /* Позиционирование относительно родителя */
+    top: 0;
+    left: -9999px;
+    right: -9999px;
+    bottom: 0;
+    z-index: -1; /* Помещает под другие элементы */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 70px;
+    position: relative; /* Ограничивает абсолютные элементы внутри */
+    z-index: 10; /* Обеспечивает, что кнопка авторизации всегда сверху */
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Указатель при наведении */
+    margin-bottom: -10px;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.delivery-information {
+    display: flex;
+    flex-direction: column; /* Элементы располагаются вертикально */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    text-align: center; /* Центрируем текст */
+    margin: 60px 0; /* Увеличиваем отступы сверху и снизу */
+    position: relative; /* Это важно, чтобы контролировать положение внутри секции */
+    z-index: 1; /* Убедимся, что она выше остальных блоков */
+}
+
+.text {
+    font-size: 55px; /* Увеличим размер шрифта */
+    margin-bottom: 45px; /* Отступ снизу, чтобы отделить от других элементов */
+    margin-top: 10px; /* Если требуется сдвинуть чуть выше */
+    z-index: 2; /* Убедимся, что текст не перекрывается */
+}
+
+.delivery-icon {
+    width: 200px; /* Укажите необходимую ширину иконки */
+    height: auto; /* Высота будет определяться автоматически */
+    margin-top: 10px; /* Увеличиваем отступ сверху */
+    margin-bottom: 40px; /* Увеличиваем отступ снизу между иконкой и заголовком */
+}
+
+.delivery-boxes {
+    display: flex;
+    gap: 27px; /* Расстояние между прямоугольниками */
+    justify-content: center; /* Выравнивание по центру */
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+}
+
+.delivery-box {
+    width: 370px;
+    height: 230px; /* Восстанавливаем фиксированную высоту */
+    background-color: #fcfcfc;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between; /* Разделяем контент: текст вверху, иконка внизу */
+    padding: 15px;
+    box-sizing: border-box;
+    overflow: hidden; /* Скрываем лишнее содержимое, если оно не помещается */
+    text-decoration: none;
+    color: inherit;
+}
+
+.delivery-title-1, .delivery-title-2, .delivery-title-3, .delivery-title-4 {
+    font-size: 80px;
+    margin-top: -5px; /* Уменьшаем отступ сверху */
+    margin-left: 20px;
+    margin-bottom: -5px; /* Уменьшаем отступ снизу */
+    text-align: center;
+    width: calc(100% - 40px); /* Учитываем отступы */
+    font-weight: 500;
+}
+
+.delivery-text-1, .delivery-text-2, .delivery-text-3, .delivery-text-4 {
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 1.2; /* Межстрочный интервал */
+    width: calc(100% - 40px); /* Гарантируем, что текст не выходит за пределы */
+    height: 100%; /* Разрешаем тексту занимать всю доступную высоту */
+    overflow: hidden; /* Скрыть выходящий за пределы текст, если он не помещается */
+}
+
+.delivery-title-2 {
+    color: #81bda4;
+}
+
+.delivery-title-1, .delivery-title-3 {
+    color: #d8b1fa;
+}
+
+.pt-text {
+    margin: 40px 0; /* Добавляем отступы сверху и снизу */
+    font-size: 55px;
+    text-align: center; /* Центрируем текст */
+}
+
+.partners-boxes {
+    display: flex;
+    flex-direction: column; /* Держим два ряда вертикально */
+    align-items: center; /* Центрируем по горизонтали */
+    gap: 15px; /* Расстояние между рядами */
+}
+
+.top-partners, .bottom-partners {
+    display: flex;
+    justify-content: center; /* Центрируем боксы по горизонтали */
+    width: 100%; /* Задаем ширину 100% */
+    gap: -20px; /* Отступ между боксами по горизонтали */
+}
+
+.partners-box {
+    width: 210px;
+    height: 275px; /* Установите фиксированную высоту */
+    margin: 0 15px; /* Отступы по бокам */
+    background-color: #fcfcfc;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем элементы по горизонтали */
+    justify-content: flex-start; /* Выравнивание по верхнему краю */
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+.partners-title-1, .partners-title-2, .partners-title-3, .partners-title-4, .partners-title-5, .partners-title-6, .partners-title-7, .partners-title-8, .partners-title-9, .partners-title-10 {
+    width: 100%; /* Полная ширина контейнера */
+    height: auto; /* Автоматическая высота */
+    margin-top: 30px;
+    margin-bottom: 10px; /* Отступ между иконкой и текстом */
+    object-fit: contain; /* Сохранение пропорций изображения */
+}
+
+.partners-text {
+    font-size: 25px;
+    text-align: center; /* Центрируем текст */
+    line-height: 1.2; /* Межстрочный интервал */
+    width: calc(100% - 40px); /* Учитываем отступы */
+    overflow: hidden; /* Скрыть выходящий за пределы текст, если он не помещается */
+}
+
+.question-text {
+    margin: 40px 0;
+    font-size: 55px;
+    text-align: center;
+}
+
+.questions {
+    width: 100%; /* Полная ширина для контейнера */
+    max-width: 1210px; /* Ограничение максимальной ширины */
+    margin: 0 auto; /* Центрирование */
+    padding: 0 20px; /* Небольшие отступы по бокам */
+}
+
+/* Обновление для стиля вопросов */
+.question-box {
+    padding: 20px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin: 10px 0;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, max-height 0.4s ease;
+}
+
+.question-box:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.question-title {
+    display: flex;
+    justify-content: space-between; /* Выравниваем текст и иконку по краям */
+    align-items: center; /* Центрируем по вертикали только содержимое заголовка */
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    width: 100%;
+    transition: color 0.3s ease;
+}
+
+/* Стили для иконки плюсика в вопросах */
+.toggle-icon {
+    font-size: 24px;
+    color: #007bff;
+    transition: transform 0.3s ease;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1; /* Убедитесь, что они находятся под другими важными элементами */
+}
+
+.question-box.active .toggle-icon {
+    transform: rotate(45deg);
+}
+
+.answer-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease; /* Плавный переход для высоты и отступов */
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Разделительная линия */
+.divider {
+    margin-top: 10px; /* Увеличиваем отступ сверху */
+    border-top: 1px solid #ddd;
+    display: none; /* Скрываем по умолчанию */
+}
+
+/* Приписка */
+.footer-text {
+    margin-top: 50px; /* Увеличиваем отступ сверху */
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    display: none; /* Скрываем по умолчанию */
+}
+
+/* Активное состояние */
+.question-box.active .answer-content {
+    max-height: 1000px; /* Достаточно большая высота для раскрытия */
+    padding-top: 15px; /* Отступ сверху внутри ответа */
+    padding-bottom: 15px; /* Отступ снизу внутри ответа */
+    overflow: visible;
+}
+
+/* Показываем разделительную линию и приписку только при открытии */
+.question-box.active .divider,
+.question-box.active .footer-text {
+    display: block;
+}
+
+.answer-content p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.6; /* Улучшенное межстрочное расстояние */
+    color: #4a4a4a; /* Мягкий серый цвет для текста */
+    text-align: justify; /* Выровнять текст по ширине */
+}
+
+.question-box.active .answer-content p {
+    opacity: 1;
+}
+
+/* Прочие стили */
+.delivery-information {
+    margin-bottom: 60px;
+}
+
+.information {
+    background-color: #f1f1f1; /* Светлый фон */
+    padding: 20px; /* Отступы внутри секции */
+    border-top: 1px solid #ddd; /* Граница сверху */
+    text-align: left; /* Выравнивание текста */
+    margin-top: 60px; /* Отступ сверху */
+}
+
+.informations {
+    max-width: 1200px; /* Максимальная ширина секции */
+    margin: 0 auto; /* Центрируем секцию по горизонтали */
+    padding: 0 15px; /* Отступы от боков экрана */
+}
+
+.informations h2 {
+    font-size: 1.5em; /* Размер заголовка */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.informations p {
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.information {
+    display: flex; /* Используем flexbox для расположения элементов */
+    align-items: flex-start; /* Вертикальное выравнивание по верхнему краю */
+}
+
+.social-links {
+    margin-left: 20px;
+    text-align: right;
+    flex-shrink: 0; /* Не позволяем уменьшаться блоку с социальными ссылками */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    margin-bottom: 0;
+    text-decoration: none;
+}
+
+.social-links a {
+    text-decoration: none;
+    font-size: 35px;
+    margin: 0 5px;
+}
+
+.instc, .ytc, .tgc, .vkc {
+    color: #beb9b9;
+}
+
+
+.icon-box {
+    width: 100px;
+    height: 100px;
+    background-color: #ff564600;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center; /* Центрируем иконку по горизонтали */
+}
+
+/* Стили для кнопки "Вход | Регистрация" */
+.login-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 35px;
+    border-radius: 8px;
+    margin-bottom: -5px;
+    border: 2px solid #a32ff12d;
+    color: #ffffff;
+    font-size: 20px;
+    background-color: #cbaee4dc;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.login-btn:hover {
+    background-color: #a32ff19c;
+}
+
+.login-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.theme-toggle-btn {
+    display: flex;
+    align-items: center; /* Центрируем по вертикали */
+    justify-content: center; /* Центрируем по горизонтали */
+    margin-right: 5px;
+    outline: none;
+    border: none;
+    background-color: #cbaee4dc; /* Цвет фона кнопки */
+    border: 2px solid #a32ff12d;
+    transition: background-color 0.3s;
+    border-radius: 8px; /* Закругленные углы кнопки */
+    cursor: pointer; /* Указатель при наведении */
+    width: 35px; /* Ширина кнопки */
+    height: 35px; /* Высота кнопки */
+    margin-bottom: -5px;
+}
+
+.theme-toggle-btn:hover {
+    background-color: #a32ff19c;
+}
+
+.theme-icon {
+    width: 20px; /* Размер иконки */
+    height: 20px; /* Размер иконки */
+    margin: 0; /* Убираем отступы */
+}
+
+.theme-toggle-btn:focus {
+    outline: none;
+}
+
+/* Стили для аватара */
+.profile-avatar {
+    display: flex;
+    align-items: center; /* Центрируем по вертикали */
+    justify-content: center; /* Центрируем по горизонтали */
+    margin-right: 5px;
+    outline: none;
+    border: none;
+    background-color: #cbaee4dc; /* Цвет фона кнопки */
+    border: 2px solid #a32ff12d;
+    transition: background-color 0.3s;
+    border-radius: 8px; /* Закругленные углы кнопки */
+    cursor: pointer; /* Указатель при наведении */
+    width: 35px; /* Ширина кнопки */
+    height: 35px; /* Высота кнопки */
+    margin-bottom: -5px;
+}
+
+.profile-avatar:hover {
+    background-color: #a32ff19c; /* Изменение цвета при наведении, аналогично кнопке */
+}
+
+
+

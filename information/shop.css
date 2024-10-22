@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    color: #000;
+    overflow-x: hidden; /* Скрыть горизонтальную прокрутку */
+}
+
+header {
+    background-color: #e4c5ff; /* Цвет фона для заголовка */
+    padding: 15px;
+    position: relative;
+    border-bottom: none;
+    box-shadow: 2px 2px 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-background {
+    background-color: #e4c5ff;
+    position: absolute; /* Позиционирование относительно родителя */
+    top: 0; /* Прикрепляет к верхней границе родителя */
+    left: -9999px; /* Скрывает слева за пределами видимости */
+    right: -9999px; /* Скрывает справа за пределами видимости */
+    bottom: 0; /* Прикрепляет к нижней границе родителя */
+    z-index: -1; /* Помещает под другие элементы */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 70px; /* Убираем отступы по бокам */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Указатель при наведении */
+    margin-bottom: -10px;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.information {
+    background-color: #f1f1f1; /* Светлый фон */
+    padding: 20px; /* Отступы внутри секции */
+    border-top: 1px solid #ddd; /* Граница сверху */
+    text-align: left; /* Выравнивание текста */
+    margin-top: 60px; /* Отступ сверху */
+}
+
+.informations {
+    max-width: 1200px; /* Максимальная ширина секции */
+    margin: 0 auto; /* Центрируем секцию по горизонтали */
+    padding: 0 15px; /* Отступы от боков экрана */
+}
+
+.informations h2 {
+    font-size: 1.5em; /* Размер заголовка */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.informations p {
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.information {
+    display: flex; /* Используем flexbox для расположения элементов */
+    align-items: flex-start; /* Вертикальное выравнивание по верхнему краю */
+}
+
+.social-links {
+    margin-left: 20px;
+    text-align: right;
+    flex-shrink: 0; /* Не позволяем уменьшаться блоку с социальными ссылками */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    margin-bottom: 0;
+    text-decoration: none;
+}
+
+.social-links a{
+    text-decoration: none;
+    font-size: 35px;
+    margin: 0 5px;
+}
+
+.instc{
+    color: #fb0065;
+}
+
+.tgc{
+    color: #3390ec;
+}
+
+.vkc{
+    color: #006dff;
+}
+
+.ytc{
+    color: #ff0000;
+}
+
+/* Стили для кнопки "Вход | Регистрация" */
+.login-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid #a32ff12d;
+    color: #ffffff;
+    font-size: 20px;
+    background-color: #cbaee4dc;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.login-btn:hover {
+    background-color: #a32ff19c;
+}
+
+.login-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.theme-toggle-btn {
+    display: flex;
+    align-items: center; /* Центрируем по вертикали */
+    justify-content: center; /* Центрируем по горизонтали */
+    margin-right: 5px;
+    outline: none;
+    border: none;
+    background-color: #cbaee4dc; /* Цвет фона кнопки */
+    border: 2px solid #a32ff12d;
+    transition: background-color 0.3s;
+    border-radius: 8px; /* Закругленные углы кнопки */
+    cursor: pointer; /* Указатель при наведении */
+    width: 40px; /* Ширина кнопки */
+    height: 40px; /* Высота кнопки */
+}
+
+.theme-toggle-btn:hover {
+    background-color: #a32ff19c;
+}
+
+.theme-icon {
+    width: 20px; /* Размер иконки */
+    height: 20px; /* Размер иконки */
+    margin: 0; /* Убираем отступы */
+}
+
+.theme-toggle-btn:focus {
+    outline: none;
+}

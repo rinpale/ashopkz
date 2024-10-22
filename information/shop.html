@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бесплатная доставка · Ashop.kz</title>
+    <link rel="stylesheet" href="delivery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-background"></div> <!-- Фон логотипа -->
+        <div class="header-container">
+            <a href="../aashop.html">
+                <img src="../logo/Logo 1.svg" alt="Логотип сайта Ashop.kz" class="logo">
+            </a>
+            <div class="header-buttons">
+                <!-- Кнопка для смены темы -->
+                <button class="theme-toggle-btn">
+                    <img src="../logo/white.svg" alt="Светлая тема" id="theme-icon" class="theme-icon">
+                </button>
+                <!-- Кнопка "Вход | Регистрация" -->
+                <a href="autorization/login.html" class="login-btn">
+                    <img src="logo/Untitled.svg" alt="Иконка логина" class="login-icon">
+                    Вход | Регистрация
+                </a>
+                <script>
+                    // Проверка сессии пользователя
+                    fetch('/check-session').then(response => response.json()).then(data => {
+                        if (data.isLoggedIn) {
+                            document.querySelector('.login-btn').outerHTML = `
+                                <a href="profile/profile.html" class="profile-btn">
+                                    <img src="${data.avatar}" alt="Аватар пользователя" class="profile-avatar">
+                                </a>
+                            `;
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </header>
+    <section class="delivery-information">
+        <img src="../logo/Money.svg" alt="Money" class="delivery-icon">
+        <h1 class="text">Ashop Бонусы</h1>
+        <div class="delivery-boxes">
+            <a class="delivery-box">
+                <h3 class="delivery-title-1"><i class="ri-shopping-basket-2-line"></i></h3>
+                <p class="delivery-text-1"></p>
+            </a>
+            <a class="delivery-box">
+                <h3 class="delivery-title-2"><i class="ri-money-dollar-circle-line"></i></h3>
+                <p class="delivery-text-2">Доставка будет бесплатной при определенной сумме</p>
+            </a>
+            <a class="delivery-box">
+                <h3 class="delivery-title-3"><i class="ri-team-line"></i></h3>
+                <p class="delivery-text-3">Бесплатная доставка постоянным клиентам</p>
+            </a>
+        </div>
+    </section>
+    <section class="delivery-partners">
+        <h1 class="pt-text">Наши партнеры</h1>
+        <div class="partners-boxes">
+            <div class="top-partners">
+                <a class="partners-box">
+                    <img src="../logo/Adidas.svg" alt="Adidas" class="partners-title-1">
+                    <p class="partners-text-1">Adidas</p>
+                </a>
+                <a class="partners-box">
+                    <img src="../logo/ZaraHome.svg" alt="ZaraHome" class="partners-title-2">
+                    <p class="partners-text-2">Zara Home</p>
+                </a>
+                <a class="partners-box">
+                    <img src="../logo/IKea.svg" alt="IKEA" class="partners-title-3">
+                    <p class="partners-text-3">IKEA</p>
+                </a>
+                <a class="partners-box">
+                    <img src="../logo/dfs.svg" alt="dfs" class="partners-title-4">
+                    <p class="partners-text-4">DFS</p>
+                </a>
+                <a class="partners-box">
+                    <img src="../logo/Nike.svg" alt="Nike" class="partners-title-5">
+                    <p class="partners-text-5">Nike</p>
+                </a>
+            </div>
+            <div class="bottom-partners">
+                <a class="partners-box">
+                    <img src="../logo/samsung.svg" alt="Samsung" class="partners-title-6">
+                    <p class="partners-text-6">Samsung</p>
+                </a>
+                <a class="partners-box">
+                    <img src="../logo/Crocs.svg" alt="Crocs" class="partners-title-7">
+                    <p class="partners-text-7">Crocs</p>
+                </a>
+                <a class="partners-box">
+                    <img src="../logo/H&M.svg" alt="H&M" class="partners-title-8">
+                    <p class="partners-text-8">H&M</p>
+                </a>
+                <a class="partners-box">
+                    <img src="../logo/Berhska.svg" alt="Berhska" class="partners-title-9">
+                    <p class="partners-text-9">Berhska</p>
+                </a>
+                <a class="partners-box">
+                    <img src="../logo/apple.svg" alt="Apple" class="partners-title-10">
+                    <p class="partners-text-10">Apple</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="questions">
+        <h1 class="question-text">Популярные вопросы</h1>
+        <div class="question-boxes">
+            <a class="question-box">
+                <p>Какую сумму нужно потратить, чтобы получить бесплатную доставку?</p>
+            </a>
+            <a class="question-box">
+                <p>2121</p>
+            </a>
+            <a class="question-box">
+                <p>212</p>
+            </a>
+            <a class="question-box">
+                <p>323123</p>
+            </a>
+            <a class="question-box">
+                <p>23231</p>
+            </a>
+            <a class="question-box">
+                <p>232  13</p>
+            </a>
+            <a class="question-box">
+                <p>232323</p>
+            </a>
+            <a class="question-box">
+                <p>2321332</p>
+            </a>
+            <a class="question-box">
+                <p>3232</p>
+            </a>
+        </div>
+    </section>
+    <section class="information">
+        <div class="informations">
+            <h2>Контактная информация</h2>
+            <p>Адрес: ул. Каныша Сатпаева, 22, Алматы, Казахстан</p>
+            <p>Телефон: +7 (705) 626-82-65</p>
+            <p>Email: siamoonq@gmail.com</p>
+            <h2>О компании</h2>
+            <p>&copy; 2023-2024, ТОО «Ashop»</p>
+            <p>Ashop.kz — интернет-магазин, предлагающий качественные товары с 2023 года. <br> Наша цель — сделать шопинг удобным и доступным для каждого клиента.</p>
+        </div>
+        <div class="social-links">
+            <h2>Социальные сети</h2>
+            <a class="instc" href="https://www.instagram.com/amytaev/?hl=ru" target="_blank"><i class="ri-instagram-fill"></i></a>
+            <a class="tgc" href="https://t.me/amytaev" target="_blank"><i class="ri-telegram-fill"></i></a>
+            <a class="vkc" href="https://vk.com/amytaev" target="_blank"><i class="ri-vk-fill"></i></a>
+            <a class="ytc" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><i class="ri-youtube-fill"></i></a>
+        </div>
+    </section>
+
+    <script>
+    // Проверка сессии пользователя
+    fetch('/check-session').then(response => response.json()).then(data => {
+        if (data.isLoggedIn) {
+            document.querySelector('.login-btn').outerHTML = `
+                <a href="profile/profile.html" class="profile-btn">Профиль</a>
+            `;
+        }
+    });
+    </script>
+</body>
+</html>

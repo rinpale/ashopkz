@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бесплатная доставка · Ashop.kz</title>
+    <link rel="stylesheet" href="guide.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-background"></div> <!-- Фон логотипа -->
+        <div class="header-container">
+            <a href="../aashop.html">
+                <img src="../logo/Logo 1.svg" alt="Логотип сайта Ashop.kz" class="logo">
+            </a>
+            <div class="header-buttons">
+                <!-- Кнопка для смены темы -->
+                <button class="theme-toggle-btn">
+                    <img src="../logo/white.svg" alt="Светлая тема" id="theme-icon" class="theme-icon">
+                </button>
+                <!-- Кнопка "Вход | Регистрация" -->
+                <a href="autorization/login.html" class="login-btn">
+                    <img src="logo/Untitled.svg" alt="Иконка логина" class="login-icon">
+                    Вход | Регистрация
+                </a>
+                <script>
+                    // Проверка сессии пользователя
+                    fetch('/check-session').then(response => response.json()).then(data => {
+                        if (data.isLoggedIn) {
+                            document.querySelector('.login-btn').outerHTML = `
+                                <a href="profile/profile.html" class="profile-btn">
+                                    <img src="${data.avatar}" alt="Аватар пользователя" class="profile-avatar">
+                                </a>
+                            `;
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </header>
+    <section class="stock-information">
+        <img src="../logo/support.svg" alt="Support" class="stock-icon">
+    </section>
+    <section class="questions">
+        <h1 class="question-text">Топ 10 вопросов</h1>
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Как мне связаться с техподдержкой?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>Вы можете связаться с нашей службой технической поддержки по электронной почте, указанной на сайте, или через форму обратной связи, которая находится в конце этой страницы. Также вы можете позвонить на номер горячей линии, чтобы получить оперативную помощь. Обычно мы отвечаем на запросы в течение 24 часов. В случае срочных вопросов рекомендуем использовать телефон, чтобы получить оперативную помощь. Мы всегда рады помочь и стараемся решить ваши проблемы как можно быстрее!
+                    <br> • <a href="techsupport.html" class="techsupport">Связаться с техподдержкой.</a>
+                    <br> • Почта техподдержки: siamoonq@gmail.com
+                    <br> • Горячая линия: +7 (705) 626-82-65</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Какие акции и скидки действуют в данный момент?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>Вы можете узнать о текущих акциях и скидках на главной странице нашего сайта в разделе "Акции" или подписавшись на нашу рассылку, чтобы быть в курсе всех новостей.</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Существуют ли акции или купоны на бесплатную доставку?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>В рамках специальных акций и предложений могут быть доступны купоны и промокоды на бесплатную доставку. Например, в преддверии Новогодней распродажи мы часто предлагаем нашим клиентам уникальные промокоды, которые позволяют получить бесплатную доставку на заказы независимо от их суммы. Следите за рассылками и обновлениями на сайте, чтобы не пропустить Новогодние акции, где вас ждут не только бесплатная доставка, но и значительные скидки на различные товары. Эти предложения действуют ограниченное время, поэтому рекомендуем заранее планировать покупки в праздничный период.</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Как я могу отследить свой заказ?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>После отправки заказа вы получите уведомление на электронную почту с трек-номером. Вы можете использовать его на сайте курьерской службы для отслеживания статуса доставки.</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Каковы сроки доставки?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>Сроки доставки зависят от вашего региона. Обычно доставка по городу занимает 1-3 дня, в другие регионы — до 7 рабочих дней. Точную информацию можно найти на странице оформления заказа.</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Могу ли я изменить адрес доставки после оформления заказа?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>Если заказ еще не отправлен, вы можете изменить адрес доставки, связавшись с нашей службой поддержки. После отправки вашего заказа, изменить адрес будет невозможно.</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Что делать, если мне не пришел заказ?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>Если вы не получили заказ в указанные сроки, пожалуйста, свяжитесь с нашей службой поддержки, и мы поможем вам выяснить ситуацию.</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Как я могу изменить свои контактные данные в аккаунте?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>Чтобы изменить контактные данные, войдите в свой аккаунт на нашем сайте и перейдите в раздел "Настройки профиля". Там вы сможете обновить свои адрес, номер телефона и адрес электронной почты. Не забудьте сохранить изменения!</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Как я могу отменить свой заказ?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>Если вы хотите отменить заказ, свяжитесь с нашей службой поддержки как можно скорее. Мы можем отменить ваш заказ, если он еще не был отправлен. Если заказ уже в процессе доставки, вам нужно будет дождаться его получения и затем оформить возврат.</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+
+        <div class="question-box" onclick="toggleAnswer(this)">
+            <p class="question-title">Моя посылка была повреждена. Что мне делать?</p>
+            <div class="toggle-icon">
+                <i class="ri-add-line"></i> <!-- Иконка плюсика по умолчанию -->
+            </div>
+            <div class="answer-content">
+                <p>Если вы получили поврежденную посылку, пожалуйста, немедленно свяжитесь с нашей службой поддержки. Мы попросим вас предоставить фотографии повреждений и обработаем ваш запрос на возврат или замену товара в соответствии с нашей политикой.</p>
+                <!-- Разделительная линия -->
+                <div class="divider"></div>
+                <!-- Приписка в конце -->
+                <p class="footer-text">Надеюсь мы ответили на ваш вопрос.</p>
+            </div>
+        </div>
+    </section>
+    <section class="information">
+        <div class="informations">
+            <h2>Контактная информация</h2>
+            <p>Адрес: ул. Каныша Сатпаева, 22, Алматы, Казахстан</p>
+            <p>Телефон: +7 (705) 626-82-65</p>
+            <p>Email: siamoonq@gmail.com</p>
+            <h2>О компании</h2>
+            <p>&copy; 2023-2024, ТОО «Ashop»</p>
+            <p>Ashop.kz — интернет-магазин, предлагающий качественные товары с 2023 года. <br> Наша цель — сделать шопинг удобным и доступным для каждого клиента.</p>
+        </div>
+        <div class="social-links">
+            <h2>Социальные сети</h2>
+            <a class="instc" href="https://www.instagram.com/amytaev/?hl=ru" target="_blank"><i class="ri-instagram-fill"></i></a>
+            <a class="tgc" href="https://t.me/amytaev" target="_blank"><i class="ri-telegram-fill"></i></a>
+            <a class="vkc" href="https://vk.com/amytaev" target="_blank"><i class="ri-vk-fill"></i></a>
+            <a class="ytc" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><i class="ri-youtube-fill"></i></a>
+        </div>
+    </section>
+    <script>
+        // Функция для проверки, полностью ли элемент виден на экране
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Функция для раскрытия/сворачивания ответов
+        function toggleAnswer(element) {
+            const answerContent = element.querySelector('.answer-content');
+            const isActive = element.classList.contains('active');
+
+            if (isActive) {
+                element.classList.remove('active');
+                answerContent.style.maxHeight = answerContent.scrollHeight + "px"; // Устанавливаем текущее значение высоты
+                requestAnimationFrame(() => {
+                    answerContent.style.maxHeight = "0"; // Плавно закрываем
+                    answerContent.style.paddingTop = "0"; // Убираем верхний отступ при закрытии
+                    answerContent.style.paddingBottom = "0"; // Убираем нижний отступ при закрытии
+                });
+            } else {
+                element.classList.add('active');
+                answerContent.style.maxHeight = answerContent.scrollHeight + "px"; // Плавно раскрываем до полной высоты
+                answerContent.style.paddingTop = "15px"; // Восстанавливаем отступы при открытии
+                answerContent.style.paddingBottom = "10px"; // Восстанавливаем отступы при открытии
+
+                // Прокручиваем страницу вниз, только если элемент не виден полностью
+                setTimeout(() => {
+                    if (!isElementInViewport(element)) {
+                        element.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                }, 300); // Таймаут для плавного открытия перед прокруткой
+            }
+        }
+
+                            // Проверка сессии пользователя
+                            fetch('/check-session').then(response => response.json()).then(data => {
+                        if (data.isLoggedIn) {
+                            document.querySelector('.login-btn').outerHTML = `
+                                <a href="profile/profile.html" class="profile-btn">Профиль</a>
+                            `;
+                        }
+                    });
+        </script>
+</body>
+</html>
