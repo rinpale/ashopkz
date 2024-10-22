@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="profile.css">
+    <title>Профиль - Ashop.kz</title>
+    <script src="profile.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <a href="../aashop.html">
+                        <img src="../logo/Logo 1.svg" alt="Логотип сайта Ashop.kz" class="logo">
+                    </a>
+                </div>
+            </div>
+            <div class="sidebar" class="active">
+                <a href="profile.html">
+                    <span class="material-icons-sharp">
+                        person_outline
+                    </span>
+                    <h3>Profile</h3>
+                </a>
+                <a href="#" id="logout-btn">
+                    <span class="material-icons-sharp">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of Sidebar Section -->
+        <!-- Main Content -->
+        <main>
+            <h1>Профиль</h1>
+            <!-- Analyses -->
+            <div class="analyse">
+                <div class="sales">
+                    <div class="status">
+                        <div class="info">
+                                <div class="profile-photo-left">
+                                    <img id="profile-avatar" src="/path/to/default-avatar.png" alt="Аватар пользователя">
+                                </div>
+                                <form id="upload-form" enctype="multipart/form-data">
+                                    <label for="avatar" class="custom-file-upload">
+                                        <i class="fa fa-cloud-upload"></i> Выберите файл
+                                    </label>
+                                    <input id="avatar" type="file" accept="image/*" name="avatar" style="display: none;">
+                                    <button type="submit" class="upload-btn">Загрузить аватар</button>
+                                </form>
+                                <span id="upload-status"></span>
+            </div>
+            <!-- End of Analyses -->
+        </main>
+        <!-- End of Main Content -->
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b id="username"></b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="/path/to/default-avatar.png" alt="Аватар пользователя">
+                    </div>
+                </div>
+            </div>
+            <!-- End of Nav -->
+        </div>
+    </div>
+</body>
+</html>
