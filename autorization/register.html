@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация · Ashop.kz</title>
+    <link rel="stylesheet" href="register.css">
+    <script src="register.js" defer></script> <!-- Подключение JavaScript файла -->
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-container__content">
+            <div class="auth-container__body">
+                <div class="tabs _border">
+                    <div class="tabs-menu">
+                        <a class="tabs-item" href="login.html"><span class="tabs-item__inner">Вход</span></a>
+                        <a class="tabs-item is-active" href="register.html"><span class="tabs-item__inner">Регистрация</span></a>
+                        <a class="tabs-item" href="reset-password.html"><span class="tabs-item__inner">Сброс пароля</span></a>
+                    </div>
+                </div>
+                <div class="auth-form">
+                    <form id="registrationForm">
+                        <div class="auth-form auth-form_unset-top">
+                            <div class="auth-label text-center">Создать аккаунт</div>
+                            <div class="form-input form-input_size-lg">
+                                <input class="form-input__field" type="text" name="username" placeholder="Никнейм" required>
+                                <p class="error-message" id="usernameError"></p> <!-- Для ошибки никнейма -->
+                            </div>
+                            <div class="form-input form-input_size-lg">
+                                <input class="form-input__field" type="email" name="email" placeholder="Email" required>
+                                <p class="error-message" id="emailError"></p> <!-- Для ошибки email -->
+                            </div>
+                            <div class="form-input form-input_size-lg">
+                                <input class="form-input__field" type="tel" name="phone" placeholder="Номер телефона" required>
+                                <p class="error-message" id="phoneError"></p> <!-- Для ошибки телефона -->
+                            </div>
+                            <div class="form-input form-input_size-lg">
+                                <input class="form-input__field" type="password" name="password" placeholder="Пароль" required>
+                            </div>
+                            <div class="form-input form-input_size-lg">
+                                <input class="form-input__field" type="password" name="confirm_password" placeholder="Повторите пароль" required>
+                                <p class="error-message" id="passwordError"></p> <!-- Для ошибки пароля -->
+                            </div>
+                            <button class="btn btn_variant-primary btn_filled btn_block btn_size-lg" type="submit"><strong>Зарегистрироваться</strong></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

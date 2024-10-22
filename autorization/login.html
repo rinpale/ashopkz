@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация · Ashop.kz</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <script src="login.js"></script>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-container__content">
+            <div class="auth-container__body">
+                <div class="tabs _border">
+                    <div class="tabs-menu">
+                        <a class="tabs-item is-active" href="login.html"><span class="tabs-item__inner">Вход</span></a>
+                        <a class="tabs-item" href="register.html"><span class="tabs-item__inner">Регистрация</span></a>
+                        <a class="tabs-item" href="reset-password.html"><span class="tabs-item__inner">Сброс пароля</span></a>
+                    </div>
+                </div>
+                <div class="auth-form">
+                    <form id="loginForm" action="/login" method="post">
+                        <div class="auth-form auth-form_unset-top">
+                            <div class="auth-label text-center">Через соцсети</div>
+                            <div class="social-icons">
+                                <a href="#" class="icon"><i class="ri-vk-fill"></i></a>
+                                <a href="#" class="icon"><i class="ri-facebook-fill"></i></a>
+                                <a href="#" class="icon"><i class="ri-twitter-x-fill"></i></a>
+                                <a href="#" class="icon"><i class="ri-google-fill"></i></a>
+                            </div>
+                            <div class="auth-label text-center">Через логин и пароль</div>
+                            <div class="form-input form-input_size-lg">
+                                <input class="form-input__field" type="text" name="login" placeholder="Email или никнейм" required>
+                            </div>
+                            <div class="form-input form-input_size-lg">
+                                <input class="form-input__field" type="password" name="password" placeholder="Пароль" required>
+                            </div>
+                            <button class="btn btn_variant-primary btn_filled btn_block btn_size-lg" type="submit"><strong>Войти</strong></button>
+                        </div>
+                    </form>
+                    <div class="auth-footer auth-footer-forgot">
+                        <div class="auth-label text-center">
+                            Вы забыли пароль? <a href="reset-password.html">Восстановить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

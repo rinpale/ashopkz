@@ -1,0 +1,237 @@
+:root {
+    --primary-color: #2196f3;
+    --secondary-color: #8a8a8e;
+    --background-color: #f2f2f3;
+    --text-color: #212529;
+    --input-border-color: #dcdee2;
+    --input-focus-border-color: #57a3f3;
+    --btn-bg-color: #2196f3;
+    --btn-text-color: #fff;
+    --border-radius: 6px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Open Sans", Roboto, "Helvetica Neue", Helvetica, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 12px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.auth-container__content {
+    width: 100%;
+    margin: auto;
+}
+
+.auth-logo__image {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.auth-container__body {
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.06), 0 17px 50px rgba(0, 0, 0, 0.02);
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 500px;
+    min-width: 300-px;
+}
+
+.tabs-menu {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+}
+
+.tabs-item {
+    flex: 1;
+    text-align: center;
+    padding: 15px 0;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.tabs-item.is-active {
+    color: var(--text-color);
+}
+
+.tabs-item.is-active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.tabs-item:hover {
+    color: var(--text-color);
+}
+
+.auth-form {
+    margin-top: 25px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-label {
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.form-input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form-input__field {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--border-radius);
+    transition: border-color 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+.form-input__field:focus {
+    border-color: var(--input-focus-border-color);
+    outline: none;
+}
+
+/* Кнопка "Войти" */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: var(--btn-text-color);
+    background-color: var(--btn-bg-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    width: 100%;
+    height: 40px;
+}
+
+.btn:hover {
+    background-color: #1976d2;
+}
+
+/* Иконки соцсетей с использованием Remixicon */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: auto; /* Отступ сверху для социальных сетей */
+    margin-bottom: auto; /* Отступ снизу для социальных сетей */
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    color: #000000;
+    font-size: 20px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+/* Стили для auth-footer */
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: small;
+}
+
+.auth-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .auth-container__body {
+        padding: 30px 20px;
+    }
+
+    .tabs-item {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .form-input__field {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .auth-footer {
+        font-size: 10px;
+    }
+
+    .auth-footer a {
+        font-size: 10px;
+    }
+}
+
+/* Стиль для выделения красной границы полей с ошибкой */
+.form-input__field.error {
+    border-color: red;
+}
+
+/* Стиль для сообщения об ошибке с фиксированной высотой */
+.error-message {
+    color: red;
+    font-size: 12px;
+    height: auto; /* Устанавливаем высоту для резервирования пространства */
+    margin-top: 3px;
+    display: block; /* Сообщение по умолчанию отображается как блок, чтобы зарезервировать место */
+}
+
